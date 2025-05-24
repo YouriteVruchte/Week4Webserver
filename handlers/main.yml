@@ -1,0 +1,6 @@
+---
+- name: Apache2 herstarten
+  service:
+    name: apache2
+    state: restarted
+# handlers file for opdracht1

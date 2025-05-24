@@ -1,0 +1,31 @@
+---
+- name: Apache installeren
+  apt:
+    name: apache2
+    state: present
+    update_cache: yes
+  notify: restart apache
+
+- name: PHP Installeren
+  apt:
+    name:
+      - php
+      - libapache2-mod-php
+      - php-mysql
+    state: present
+
+- name: MySQL installeren
+  ansible.builtin.apt:
+    name: mysql-client
+    state: present
+    update_cache: yes
+
+- name: Maak een test PHP site
+  ansible.builtin.copy:
+    dest: /var/www/html/index.php
+    content: "<?Dit is de test pagina van Youri"
+    owner: www-data
+    group: www-data
+    mode: '0644'
+
+# tasks file for opdracht1
