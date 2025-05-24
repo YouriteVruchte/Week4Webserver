@@ -23,7 +23,7 @@
 - name: Maak een test PHP site
   ansible.builtin.copy:
     dest: /var/www/html/index.php
-    content: "<?Dit is de test pagina van Youri"
+    content: "<?php Dit is de test pagina van Youri ?>"
     owner: www-data
     group: www-data
     mode: '0644'
